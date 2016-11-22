@@ -22,23 +22,24 @@ versions are welcome.
 Install
 -------
 
-Download, review, then execute the script:
+1. Log into iTunes, iCloud, App Store
+2. Download, review, then execute the script:
 
-```sh
-cd /tmp
-curl -LOk https://github.com/cema-sp/laptop/archive/master.zip
-unzip -a master.zip
-cd ./laptop-master
+  ```sh
+  cd /tmp
+  curl -LOk https://github.com/cema-sp/laptop/archive/master.zip
+  unzip -a master.zip
+  cd ./laptop-master
 
-less mac
-sh mac 2>&1 | tee ~/laptop.log
-```
+  less mac
+  sh mac 2>&1 | tee ~/laptop.log
+  ```
 
-Optionally, [install thoughtbot/dotfiles][dotfiles].
+3. ~Optionally, [install thoughtbot/dotfiles][dotfiles].~
 
 [dotfiles]: https://github.com/thoughtbot/dotfiles#install
 
-What it sets up
+What it sets up (to be updated)
 ---------------
 
 macOS tools:

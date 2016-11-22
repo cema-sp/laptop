@@ -3,6 +3,9 @@
 brew bundle --file=- <<EOF
 tap "neovim/neovim"
 
+# Brew
+brew "mas" # Mac App Store
+
 # Unix
 brew "htop"
 brew "libxml2"
@@ -31,6 +34,29 @@ brew "cabal-install"
 
 # Services
 brew "sqlite"
+
+# ------ App Store ------
+
+mas "Evernote", id: 406056744
+mas "CalendarFree", id: 415181149
+mas "GIPHY CAPTURE", id: 668208984
+mas "Pages", id: 409201541
+
+# ------ Casks ------
+
+cask "adobe-acrobat"
+cask "bitbar"
+cask "flux"
+cask "google-chrome"
+cask "grammarly"
+cask "insomnia"
+cask "iterm2"
+cask "keeweb"
+cask "sublime-text"
+cask "telegram"
+cask "tunnelblick"
+cask "veracrypt"
+cask "vlc"
 
 EOF
 
