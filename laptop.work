@@ -1,0 +1,17 @@
+#!/bin/sh
+
+brew bundle --file=- <<EOF
+tap "homebrew/versions"
+
+# Dependencies
+cask "java"
+
+# Services
+brew "elasticsearch24", restart_service: true
+brew "geos"
+brew "postgis"
+brew "rabbitmq", restart_service: true
+EOF
+
+gem_install_or_update 'sidekiq'
+

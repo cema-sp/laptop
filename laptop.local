@@ -1,0 +1,129 @@
+#!/bin/sh
+
+brew analytics off
+
+brew bundle --file=- <<EOF
+tap "neovim/neovim"
+tap "caskroom/fonts"
+
+# Apps
+brew "mas" # Mac App Store
+
+# Unix
+brew "coreutils"
+brew "gnu-sed", args: ['with-default-names']
+brew "ncdu" # disk usage util
+brew "htop"
+brew "libxml2"
+brew "neovim"
+# brew "readline" # moved to ./mac
+brew "zsh-completions"
+brew "fzf"
+brew "wrk"
+
+# Build tools
+brew "gcc"
+brew "cmake"
+
+# Git
+brew "diff-so-fancy"
+brew "grip" # markdown renderer
+brew "gist"
+
+# Image manipulation
+brew "graphviz"
+
+# Programming
+brew "direnv"
+brew "python"
+brew "python3"
+brew "go"
+brew "haskell-stack"
+brew "yarn"
+brew "cmake" # for YouCompleteMe
+brew "llvm" # for YouCompleteMe
+
+brew "ghc"
+brew "cabal-install"
+
+brew "elm"
+
+# Services
+brew "sqlite"
+
+# Other
+brew "ncdu"
+
+# ------ App Store ------
+
+mas "Calendar 2", id: 415181149
+mas "Evernote", id: 406056744
+mas "GIPHY Capture. The GIF Maker", id: 668208984
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "SomaFM Radio Player", id: 449155338
+mas "Spark - Love your email again", id: 1176895641
+mas "Todoist: To Do List | Task List", id: 585829637
+
+# ------ Casks ------
+
+cask "bitbar"
+cask "flux"
+cask "font-source-code-pro"
+cask "gitify"
+cask "google-chrome"
+cask "grammarly"
+cask "insomnia"
+cask "iterm2"
+cask "keeweb"
+cask "keybase"
+cask "osxfuse"
+cask "sublime-text"
+cask "teampaper"
+cask "telegram"
+cask "transmission"
+cask "the-unarchiver"
+cask "tunnelblick"
+cask "veracrypt"
+cask "vlc"
+
+EOF
+
+fancy_echo "Cleaning up old Homebrew formulae ..."
+brew cleanup
+brew cask cleanup
+
+fancy_echo "Installing fzf completions ..."
+sh "/usr/local/opt/fzf/install"
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  fancy_echo "Cloning oh-my-zsh ..."
+  git clone -v "git://github.com/robbyrussell/oh-my-zsh.git" "$HOME/.oh-my-zsh"
+
+  mkdir -p "$HOME/.oh-my-zsh/custom/plugins"
+
+  fancy_echo "Cloning oh-my-zsh plugin: zsh-nvm..."
+  git clone -v "git@github.com:lukechilds/zsh-nvm.git" "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm"
+fi
+
+package_control_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
+package_control_file="$package_control_dir/Package Control.sublime-package"
+
+mkdir -p $package_control_dir
+if [ ! -e "$package_control_file" ]; then
+  fancy_echo "Downloading Sublime Package Control ..."
+  curl -Lk "https://packagecontrol.io/Package Control.sublime-package" \
+    --create-dirs \
+    -o "$package_control_file"
+fi
+
+vim_plug_dir="$HOME/.vim/autoload/plug.vim"
+if [ ! -d "$vim_plug_dir" ]; then
+  fancy_echo "Downloading vim-plug ..."
+  curl -fLk "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" \
+    --create-dirs \
+    -o "$vim_plug_dir"
+fi
+
+gem_install_or_update 'overcommit'
+
