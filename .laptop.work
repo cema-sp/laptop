@@ -1,0 +1,11 @@
+#!/bin/sh
+
+brew bundle --file=- <<EOF
+
+# Services
+brew "elasticsearch24", restart_service: true
+brew "geos"
+brew "postgis"
+brew "rabbitmq", restart_service: true
+EOF
+

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+brew bundle --file=- <<EOF
+
+# Unix
+brew "htop"
+brew "libxml2"
+brew "neovime
+brew "readline"
+brew "zsh-completions"
+
+# Build tools
+brew "gcc"
+brew "cmake"
+
+# Git
+brew "diff-so-fancy"
+brew "grip" # markdown renderer
+
+# Image manipulation
+brew "graphviz"
+
+# Programming
+brew "direnv"
+brew "python"
+brew "go"
+
+brew "ghc"
+brew "cabal-install"
+
+# Services
+brew "sqlite"
+
+EOF
+
