@@ -153,8 +153,10 @@ gem_install_or_update 'bundler'
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
 
-if [ -f "$HOME/.laptop.local" ]; then
-  fancy_echo "Running your customizations from ~/.laptop.local ..."
+if [ -f "./.laptop.local" ]; then
+  fancy_echo "Running your customizations from ./.laptop.local ..."
   # shellcheck disable=SC1090
-  . "$HOME/.laptop.local"
+  . "./.laptop.local"
+  . "./.laptop.work"
 fi
+

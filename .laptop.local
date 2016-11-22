@@ -1,5 +1,7 @@
 #!/bin/sh
 
+brew analytics off
+
 brew bundle --file=- <<EOF
 tap "neovim/neovim"
 

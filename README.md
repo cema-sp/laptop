@@ -23,6 +23,7 @@ Install
 -------
 
 1. Log into iTunes, iCloud, App Store
+2. Install XCode dev tools: `xcode-select --install`
 2. Download, review, then execute the script:
 
   ```sh
