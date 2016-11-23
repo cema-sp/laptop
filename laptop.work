@@ -1,6 +1,10 @@
 #!/bin/sh
 
 brew bundle --file=- <<EOF
+tap "homebrew/versions"
+
+# Dependencies
+cask "java"
 
 # Services
 brew "elasticsearch24", restart_service: true

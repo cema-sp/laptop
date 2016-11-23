@@ -11,7 +11,7 @@ brew "mas" # Mac App Store
 # Unix
 brew "htop"
 brew "libxml2"
-brew "neovime
+brew "neovim"
 brew "readline"
 brew "zsh-completions"
 
@@ -61,4 +61,11 @@ cask "veracrypt"
 cask "vlc"
 
 EOF
+
+fancy_echo "Cleaning up old Homebrew formulae ..."
+brew cleanup
+brew cask cleanup
+
+fancy_echo "Cloning oh-my-zsh ..."
+git clone "git://github.com/robbyrussell/oh-my-zsh.git" "~/.oh-my-zsh"
 
