@@ -30,9 +30,12 @@ brew "graphviz"
 brew "direnv"
 brew "python"
 brew "go"
+brew "yarn"
 
 brew "ghc"
 brew "cabal-install"
+
+brew "elm"
 
 # Services
 brew "sqlite"

@@ -13,3 +13,5 @@ brew "postgis"
 brew "rabbitmq", restart_service: true
 EOF
 
+gem_install_or_update 'sidekiq'
+
