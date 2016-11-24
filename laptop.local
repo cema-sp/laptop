@@ -51,6 +51,7 @@ mas "Pages", id: 409201541
 
 cask "adobe-acrobat"
 cask "bitbar"
+cask "dash"
 cask "flux"
 cask "google-chrome"
 cask "grammarly"
