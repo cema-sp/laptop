@@ -70,5 +70,5 @@ brew cleanup
 brew cask cleanup
 
 fancy_echo "Cloning oh-my-zsh ..."
-git clone "git://github.com/robbyrussell/oh-my-zsh.git" "~/.oh-my-zsh"
+git clone -v "git://github.com/robbyrussell/oh-my-zsh.git" "$HOME/.oh-my-zsh"
 
