@@ -31,6 +31,8 @@ brew "direnv"
 brew "python"
 brew "go"
 brew "yarn"
+brew "cmake" # for YouCompleteMe
+brew "llvm" # for YouCompleteMe
 
 brew "ghc"
 brew "cabal-install"
@@ -73,5 +75,14 @@ brew cask cleanup
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   fancy_echo "Cloning oh-my-zsh ..."
   git clone -v "git://github.com/robbyrussell/oh-my-zsh.git" "$HOME/.oh-my-zsh"
+fi
+
+package_control_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
+package_control_file="$package_control_dir/Package Control.sublime-package"
+
+mkdir -p $package_control_dir
+if [ ! -e "$package_control_file" ]; then
+  fancy_echo "Downloading Sublime Package Control ..."
+  curl -Lk "https://packagecontrol.io/Package Control.sublime-package" -o "$package_control_file"
 fi
 
