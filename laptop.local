@@ -70,6 +70,8 @@ fancy_echo "Cleaning up old Homebrew formulae ..."
 brew cleanup
 brew cask cleanup
 
-fancy_echo "Cloning oh-my-zsh ..."
-git clone -v "git://github.com/robbyrussell/oh-my-zsh.git" "$HOME/.oh-my-zsh"
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  fancy_echo "Cloning oh-my-zsh ..."
+  git clone -v "git://github.com/robbyrussell/oh-my-zsh.git" "$HOME/.oh-my-zsh"
+fi
 
