@@ -12,7 +12,7 @@ brew "mas" # Mac App Store
 brew "htop"
 brew "libxml2"
 brew "neovim"
-brew "readline"
+# brew "readline" # moved to ./mac
 brew "zsh-completions"
 
 # Build tools
