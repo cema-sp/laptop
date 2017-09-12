@@ -19,6 +19,7 @@ brew "neovim"
 # brew "readline" # moved to ./mac
 brew "zsh-completions"
 brew "fzf"
+brew "wget"
 brew "wrk"
 
 # Build tools
@@ -35,6 +36,7 @@ brew "graphviz"
 
 # Programming
 brew "direnv"
+brew "elm"
 brew "python"
 brew "python3"
 brew "go"
@@ -43,31 +45,30 @@ brew "yarn"
 brew "cmake" # for YouCompleteMe
 brew "llvm" # for YouCompleteMe
 
-brew "ghc"
-brew "cabal-install"
-
-brew "elm"
-
 # Services
 brew "sqlite"
 
 # Other
 brew "ncdu"
+brew "ngrep" # Network grep
 
 # ------ App Store ------
 
-mas "Calendar 2", id: 415181149
+mas "CalendarFree", id: 415181149
 mas "Evernote", id: 406056744
-mas "GIPHY Capture. The GIF Maker", id: 668208984
+mas "GIPHY CAPTURE", id: 668208984
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "SomaFM Radio Player", id: 449155338
-mas "Spark - Love your email again", id: 1176895641
-mas "Todoist: To Do List | Task List", id: 585829637
+mas "Pocket", id: 568494494
+mas "SomaFM", id: 449155338
+mas "Spark", id: 1176895641
+mas "Todoist", id: 585829637
 
 # ------ Casks ------
 
 cask "bitbar"
+cask "docker"
+cask "firefox"
 cask "flux"
 cask "font-source-code-pro"
 cask "gitify"
@@ -78,14 +79,19 @@ cask "iterm2"
 cask "keeweb"
 cask "keybase"
 cask "osxfuse"
+cask "skype"
 cask "sublime-text"
-cask "teampaper"
 cask "telegram"
 cask "transmission"
 cask "the-unarchiver"
+cask "transmission"
 cask "tunnelblick"
 cask "veracrypt"
 cask "vlc"
+
+# ------ After Casks ------
+
+brew "ntfs-3g"
 
 EOF
 
@@ -126,4 +132,3 @@ if [ ! -d "$vim_plug_dir" ]; then
 fi
 
 gem_install_or_update 'overcommit'
-
