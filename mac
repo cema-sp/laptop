@@ -159,6 +159,8 @@ if [ "$(rbenv version-name)" = system ]; then
   fancy_echo "Installing ruby $ruby_version..."
   rbenv install $ruby_version
   rbenv global $ruby_version
+  # Initialize rbenv
+  eval "$(rbenv init - --no-rehash)"
 fi
 
 if brew list | grep --silent "qt@5.5"; then
