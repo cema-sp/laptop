@@ -115,12 +115,12 @@ fi
 package_control_dir="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
 package_control_file="$package_control_dir/Package Control.sublime-package"
 
-mkdir -p $package_control_dir
+mkdir -p "'$package_control_dir'"
 if [ ! -e "$package_control_file" ]; then
   fancy_echo "Downloading Sublime Package Control ..."
   curl -Lk "https://packagecontrol.io/Package Control.sublime-package" \
     --create-dirs \
-    -o "$package_control_file"
+    -o "'$package_control_file'"
 fi
 
 vim_plug_dir="$HOME/.vim/autoload/plug.vim"

@@ -154,6 +154,13 @@ brew "postgres", restart_service: :changed
 brew "redis", restart_service: :changed
 EOF
 
+if [ "$(rbenv version-name)" = system ]; then
+  ruby_version="$(rbenv install -l | grep -v - | tail -1)"
+  fancy_echo "Installing ruby $ruby_version..."
+  rbenv install $ruby_version
+  rbenv global $ruby_version
+fi
+
 if brew list | grep --silent "qt@5.5"; then
   fancy_echo "Symlink qmake binary to /usr/local/bin for Capybara Webkit..."
   brew unlink qt@5.5
