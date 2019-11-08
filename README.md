@@ -1,7 +1,7 @@
 Laptop
 ======
 
-Laptop is a script to set up an macOS laptop for web and mobile development.
+Laptop is a script to set up a macOS laptop for web and mobile development.
 
 It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
@@ -16,6 +16,8 @@ We support:
 * macOS Yosemite (10.10)
 * macOS El Capitan (10.11)
 * macOS Sierra (10.12)
+* macOS High Sierra (10.13)
+* macOS Mojave (10.14)
 
 Older versions may work but aren't regularly tested.
 Bug reports for older versions are welcome.
@@ -73,7 +75,7 @@ Unix tools:
 * [Watchman] for watching for filesystem events
 * [Zsh] as your shell
 
-[Exuberant Ctags]: http://ctags.sourceforge.net/
+[Universal Ctags]: https://ctags.io/
 [Git]: https://git-scm.com/
 [OpenSSL]: https://www.openssl.org/
 [RCM]: https://github.com/thoughtbot/rcm
@@ -98,13 +100,6 @@ GitHub tools:
 Image tools:
 
 * [ImageMagick] for cropping and resizing images
-
-Testing tools:
-
-* [Qt 5] for headless JavaScript testing via [Capybara Webkit]
-
-[Qt 5]: http://qt-project.org/
-[Capybara Webkit]: https://github.com/thoughtbot/capybara-webkit
 
 Programming languages, package managers, and configuration:
 
