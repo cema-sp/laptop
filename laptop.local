@@ -16,7 +16,6 @@ brew "ncdu" # disk usage util
 brew "htop"
 brew "libxml2"
 brew "neovim"
-# brew "readline" # moved to ./mac
 brew "zsh-completions"
 brew "fzf"
 brew "wget"
@@ -36,26 +35,17 @@ brew "graphviz"
 
 # Programming
 brew "direnv"
-brew "elm"
 brew "python"
 brew "python3"
-brew "go"
-brew "haskell-stack"
-brew "yarn"
-brew "cmake" # for YouCompleteMe
 brew "llvm" # for YouCompleteMe
-
-# Services
-brew "sqlite"
+brew "shellcheck"
 
 # Other
-brew "ncdu"
-brew "ngrep" # Network grep
+brew "jq"
 
 # ------ App Store ------
 
-mas "CalendarFree", id: 415181149
-mas "Evernote", id: 406056744
+mas "Calendars", id: 415181149
 mas "GIPHY CAPTURE", id: 668208984
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -66,6 +56,7 @@ mas "Todoist", id: 585829637
 
 # ------ Casks ------
 
+cask "artpip"
 cask "bitbar"
 cask "docker"
 cask "firefox"
@@ -79,12 +70,10 @@ cask "iterm2"
 cask "keeweb"
 cask "keybase"
 cask "osxfuse"
-cask "skype"
+cask "spotify"
 cask "sublime-text"
 cask "telegram"
-cask "transmission"
 cask "the-unarchiver"
-cask "transmission"
 cask "tunnelblick"
 cask "veracrypt"
 cask "vlc"

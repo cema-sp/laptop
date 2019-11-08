@@ -6,19 +6,10 @@ tap "homebrew/versions"
 # Dependencies
 cask "java"
 
-# Services
-brew "dnsmasq"
-brew "geos" # should remove it?
-brew "nginx"
-brew "postgis" # should remove it?
-brew "rabbitmq", restart_service: true
-
 # Tools
 brew "awscli"
+cask "mysql-shell"
 
 # Apps
 mas "1Password", id: 443987910
 EOF
-
-gem_install_or_update 'sidekiq'
-
